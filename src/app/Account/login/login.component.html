@@ -1,0 +1,43 @@
+<form  class="m-4" [formGroup]="formModel" (ngSubmit)="LogIn();">
+    
+
+    <div class="form-group">
+        <label class="control-label">Email</label>
+        <div class="input-group">
+            <input class="form-control" id="Email" name="Email" type="email"  formControlName="email"
+                [class.is-valid]="email.valid" [class.is-invalid]="email.invalid && email.touched" />
+            <div class="input-group-append" [hidden]="email.untouched || !email.valid">
+                <span class="input-group-text">
+                    <i class="fa fa-check"></i>
+                </span>
+            </div>
+        </div>
+        <div [hidden]="email.valid || email.untouched" >
+            <span class="text-danger" *ngIf="email.errors?.['required']">Please enter your Email</span>
+        </div>
+    </div>
+
+    
+
+   
+
+    <div class="form-group">
+        <label class="control-label"> Password</label>
+        <div class="input-group">
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                formControlName="password" [class.is-valid]="password.valid" [class.is-invalid]="password.invalid && password.touched"/>
+            <div class="input-group-append">
+                <span class="input-group-text">
+                    <i class="fa fa-check"></i>
+                </span>
+            </div>
+        </div>
+        <div [hidden]="password.valid || password.untouched">
+            <span class="text-danger" *ngIf="password.errors?.['required']">Please enter your Password again</span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary m-4">
+       LogIn
+    </button>
+</form>
