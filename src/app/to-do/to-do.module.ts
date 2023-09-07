@@ -7,12 +7,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailsComponent } from './Components/details/details.component';
 import { userauthenticatGuard } from '../Guards/userauthenticat.guard';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DeleteComponent } from './Components/delete/delete.component';
 
 const routes:Routes =[ 
   { path: '', redirectTo: 'create', pathMatch: 'full' },
   { path: 'create', component:CreateComponent,canActivate:[userauthenticatGuard]  },
-  { path: 'details/:id', component:DetailsComponent,canActivate:[userauthenticatGuard]  },
+  { path: 'details', component:DetailsComponent,canActivate:[userauthenticatGuard]  },
   { path: 'update/:id', component:UpdateComponent,canActivate:[userauthenticatGuard]  },
+  { path: 'delete/:id', component:DeleteComponent,canActivate:[userauthenticatGuard]  }
   
 
 ];
@@ -22,7 +24,8 @@ const routes:Routes =[
     
     CreateComponent,
     UpdateComponent,
-    DetailsComponent
+    DetailsComponent,
+    DeleteComponent
   ],
   imports: [
     CommonModule,
