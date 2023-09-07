@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col" *ngFor="let card of LiveToDoData">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card {{ card.id }}</h5>
+            <p class="card-text">ID: {{ card.id }}</p>
+            <p class="card-text">User ID: {{ card.userId }}</p>
+            <p class="card-text">Title: {{ card.title }}</p>
+            <p class="card-text">Completed: {{ card.completed }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <button class="previous-button btn btn-primary" [disabled]="PageNumber==1" (click)="PreviousPage()" >Previous Page</button>
+          <button class="next-button btn btn-primary"(click)="NextPage()">Next Page</button>
+        </div>
+      </div>
+    </div>
+  </div>

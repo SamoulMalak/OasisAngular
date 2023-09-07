@@ -7,10 +7,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AccountModule } from './Account/account/account.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './Shared/error-page/error-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
