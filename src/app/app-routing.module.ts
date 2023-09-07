@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './Shared/error-page/error-page.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'livetodo', pathMatch: 'full' },
   {
     path: 'account', 
     loadChildren: () => import('src/app/Account/account/account.module').then(m => m.AccountModule)
@@ -18,7 +19,8 @@ const routes: Routes = [
     loadChildren: () => import('src/app/livetodo/livetodo.module').then(m => m.LivetodoModule)
     
   },
-  {path:'error' ,component:ErrorPageComponent}
+  {path:'error' ,component:ErrorPageComponent},
+  {path:'**',redirectTo:'livetodo'}
 ];
 
 @NgModule({

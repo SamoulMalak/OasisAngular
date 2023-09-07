@@ -1,1 +1,47 @@
-<p>create works!</p>
+<form  class="m-4" [formGroup]="formModel"  (ngSubmit)="CreateToDO();" >
+    
+
+    <div class="form-group">
+        <label class="control-label">Title</label>
+        <div class="input-group">
+            <input class="form-control" id="Title" name="Title" type="text"  formControlName="title"
+                [class.is-valid]="title.valid" [class.is-invalid]="title.invalid && title.touched" />
+            <div class="input-group-append" [hidden]="title.untouched || !title.valid">
+                <span class="input-group-text">
+                    <i class="fa fa-check"></i>
+                </span>
+            </div>
+        </div>
+        <div [hidden]="title.valid || title.untouched" >
+            <span class="text-danger" *ngIf="title.errors?.['required']">Please enter your title</span>
+        </div>
+    </div>
+
+    
+
+   
+
+    <div class="form-group">
+        <label class="control-label"> Completed</label>
+        <div class="input-group">
+            <input type="checkbox"  class="form-check-input" id="Completed" name="Completed" value="true"
+                formControlName="completed" [class.is-valid]="completed.valid" [class.is-invalid]="completed.invalid && completed.touched"/>
+          
+       
+        </div>
+    
+
+    <button type="submit" class="btn btn-primary m-4">
+       Create ToDO
+    </button>
+
+    </div>
+</form>
+
+
+<div style="text-align: center; color: green;">
+    <P>If you want to see object details </P>
+    <P>using this  </P>
+
+    <p> [LocalHost]/todo/details/id</p>
+</div>

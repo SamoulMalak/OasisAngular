@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/account.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { AccountService } from 'src/app/Services/account.service';
 })
 export class LoginComponent {
   formModel:FormGroup ;
-  constructor(private accountService:AccountService) {
+  constructor(private accountService:AccountService,
+              private router :Router) {
    
     this.formModel=new FormGroup(
       {
@@ -39,8 +41,8 @@ export class LoginComponent {
          {
            let token=response.Data;
           localStorage.setItem('Token', token);
-          // her should router to home page
-             //this.router.navigate(['/student/home']);
+             this.router.navigate(['/livetodo']);
+             
              
          }
          else

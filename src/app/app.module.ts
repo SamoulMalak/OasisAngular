@@ -8,11 +8,16 @@ import { AccountModule } from './Account/account/account.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorPageComponent } from './Shared/error-page/error-page.component';
+import { HeaderComponent } from './Shared/header/header/header.component';
+import { FooterComponent } from './Shared/footer/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

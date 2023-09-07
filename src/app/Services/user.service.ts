@@ -10,10 +10,16 @@ export class UserService {
   IsLogIn():boolean
   {
     let token =localStorage.getItem('Token');
-    if (token!==null)
+    if (token!=null)
      {
       return true;
     }
     return false;
+  }
+
+  LogOut()
+  {
+   
+    localStorage.removeItem('Token');
   }
 }

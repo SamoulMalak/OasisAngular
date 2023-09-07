@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-primary bg-primary border-bottom box-shadow mb-3">
+  <div class="container">
+    <!-- Nav links -->
+    <a class="navbar-brand" routerLink="/livetodo" routerLinkActive="bg-secondary" style="color: white;">
+      Live To Do
+    </a>
+    <a class="navbar-brand" routerLink="/todo" routerLinkActive="bg-secondary" style="color: white;">
+      To Do
+    </a>
+
+    <!-- Conditional links -->
+    <a *ngIf="isLoggedIn" class="navbar-brand" routerLink="/livetodo" routerLinkActive="bg-secondary" style="color: white;" (click)="LogOut()">
+      Hi, LogOut
+    </a>
+    <a *ngIf="!isLoggedIn" class="navbar-brand" routerLink="/account/login" routerLinkActive="bg-secondary"
+      style="color: white;">
+      LogIn
+    </a>
+  </div>
+</nav>

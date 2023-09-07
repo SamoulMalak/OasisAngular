@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class ErrorPageComponent {
 
+  /**
+   *
+   */
+ errorMessage :string='';
+  constructor() {
+   
+    this.GetErrorMsg();
+    
+  }
+
+  GetErrorMsg()
+  {
+    let msg =localStorage.getItem('msg');
+    if(msg !=null)
+    this.errorMessage=msg;
+  }
+
 }
